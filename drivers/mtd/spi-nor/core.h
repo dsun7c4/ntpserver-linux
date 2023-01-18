@@ -480,6 +480,8 @@ struct spi_nor_fixups {
  *   SPI_NOR_NO_FR:           can't do fastread.
  *   SPI_NOR_QUAD_PP:         flash supports Quad Input Page Program.
  *   SPI_NOR_RWW:             flash supports reads while write.
+ *   SPI_NOR_BP3_SR_BIT5:     BP3 is bit 5 of status register,
+ *                            must be used with SPI_NOR_4BIT_BP
  *
  * @no_sfdp_flags:  flags that indicate support that can be discovered via SFDP.
  *                  Used when SFDP tables are not defined in the flash. These
@@ -533,6 +535,7 @@ struct flash_info {
 #define SPI_NOR_NO_FR			BIT(8)
 #define SPI_NOR_QUAD_PP			BIT(9)
 #define SPI_NOR_RWW			BIT(10)
+#define SPI_NOR_BP3_SR_BIT5		BIT(11)
 
 	u8 no_sfdp_flags;
 #define SPI_NOR_SKIP_SFDP		BIT(0)
